@@ -53,7 +53,7 @@ export const goalSlice = createSlice({
     name: 'goal',
     initialState,
     reducers: {
-        reset: state => initialState
+        reset: (state) => initialState,
     }, extraReducers: builder => {
         builder
             .addCase(createGoal.pending, state => {

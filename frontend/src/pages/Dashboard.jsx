@@ -15,8 +15,9 @@ function Dashboard() {
         if (isError) {
             toast.error(message)
         }
-        if (!user) navigate('/login')
-        dispatch(getGoals())
+        if (!user) { navigate('/login') }
+        if (user)
+            dispatch(getGoals())
         return () => { dispatch(reset()) };
     }, [user, navigate, isError, message, dispatch])
     if (isLoading) return <Spinner />
